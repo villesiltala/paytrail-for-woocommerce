@@ -1550,7 +1550,7 @@ final class Gateway extends \WC_Payment_Gateway
     {
         $groups = [];
 
-        if ($this->helper::getIsSubscriptionsEnabled()) {
+        if ($this->helper::getIsSubscriptionsEnabled() && !$this->helper::getIsManualPaymentRenewalsEnabled()) {
             $groups = ['creditcard'];
         }
 

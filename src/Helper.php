@@ -32,6 +32,15 @@ class Helper
     }
 
     /**
+     * @return bool
+     */
+    public static function getIsManualPaymentRenewalsEnabled()
+    {
+        return function_exists('wcs_is_manual_renewal_enabled')
+            && \wcs_is_manual_renewal_enabled();
+    }
+
+    /**
      * @return mixed
      */
     public static function getIsChangeSubscriptionPaymentMethod()
